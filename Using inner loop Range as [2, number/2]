@@ -1,0 +1,22 @@
+low, high = 2, 10
+primes = [2]
+
+for num in range(low, high + 1):
+    flag = 0
+    if num < 2:
+        flag = 1
+        
+    if num % 2 == 0:
+        continue
+    iter = 2
+
+    while iter < int(num / 2):
+        if num % iter == 0:
+            flag = 1
+            break
+        iter += 1
+
+    if flag == 0:
+        primes.append(num)
+
+print(primes)
